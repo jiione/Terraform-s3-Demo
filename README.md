@@ -22,34 +22,27 @@
 
 ## ⚙️ 설치 및 실행 방법
 
-### 1. 클론 받기
-이 프로젝트를 클론합니다:
-```bash
-git clone https://github.com/your-repo/terraform-s3-website-hosting.git
-cd terraform-s3-website-hosting
-```
-
-### 2. Terraform 초기화
+### 1. Terraform 초기화
 Terraform을 사용하기 전에, 프로젝트 디렉터리에서 Terraform을 초기화합니다.
 ```
 terraform init
 ```
-### 3. S3 버킷 생성
+### 2. S3 버킷 생성
 S3 버킷을 생성하고 퍼블릭 액세스 및 웹사이트 호스팅 설정을 적용합니다.
 ```
 terraform apply -target=aws_s3_bucket.bucket1
 ```
-### 4. 새로운 index.html 파일 업로드
+### 3. 새로운 index.html 파일 업로드
 초기 index.html 파일을 S3 버킷에 업로드합니다.
 ```
 terraform apply -target=aws_s3_object.new_index
 ```
-### 5. 기존 index.html 파일 수정 후 재업로드
+### 4. 기존 index.html 파일 수정 후 재업로드
 이미 존재하는 index.html 파일을 수정한 후 다시 업로드합니다.
 ```
 terraform apply -target=aws_s3_object.update_index
 ```
-### 6. 새로운 main.html 파일 업로드
+### 5. 새로운 main.html 파일 업로드
 추가적인 페이지인 main.html 파일을 S3에 업로드합니다.
 ```
 terraform apply -target=aws_s3_object.main
